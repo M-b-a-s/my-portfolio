@@ -1,52 +1,56 @@
-import { FaHome, FaUser, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa6";
+import { useState } from "react";
+import { TbBrandGithub, TbBrandGoogleHome, TbBrandInstagram, TbBrandLinkedin, TbBrandTwitter, TbUser } from "react-icons/tb";
+import { HiMenu } from "react-icons/hi";
 
 const navLinks = [
-  { href: "#about", icon: FaUser, title: "About" },
+  { href: "#about", icon: TbUser, title: "About" },
   {
     href: "https://github.com/yourusername",
-    icon: FaGithub,
+    icon: TbBrandGithub,
     title: "GitHub",
     external: true,
   },
   {
     href: "https://instagram.com/yourusername",
-    icon: FaLinkedin,
+    icon: TbBrandLinkedin,
     title: "LinkedIn",
     external: true,
   },
   {
     href: "https://instagram.com/yourusername",
-    icon: FaInstagram,
+    icon: TbBrandInstagram,
     title: "Instagram",
     external: true,
   },
   {
     href: "https://twitter.com/yourusername",
-    icon: FaTwitter,
+    icon: TbBrandTwitter,
     title: "Twitter",
     external: true,
   },
 ];
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[500px] max-w-full backdrop-blur-lg bg-white/10 border border-[#bda87c] shadow-lg flex items-center px-6 py-3 rounded-xl transition-all duration-300"
+      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90vw] md:w-[500px] max-w-full backdrop-blur-lg bg-white/10 border border-[#bda87c] shadow-lg flex items-center px-6 py-3 rounded-xl transition-all duration-300"
       style={{
         backdropFilter: "blur(16px) saturate(180%)",
         WebkitBackdropFilter: "blur(16px) saturate(180%)",
       }}
     >
-      <div className="flex flex-1 items-center justify-between w-full">
+      {/* Desktop View */}
+      <div className="hidden md:flex flex-1 items-center justify-between w-full">
         <a
           href="#home"
           className="text-2xl text-[#815634] hover:text-[#212121] transition-colors"
           title="Home"
         >
-          <FaHome />
+          <TbBrandGoogleHome />
         </a>
-        <div className="flex items-center gap-0 border-x border-[#bda87c]">
+        <div className="flex items-center gap-0 border-x border-[#815634]">
           {navLinks.map(({ href, icon: Icon, title, external }, idx) => (
             <a
               key={title}
@@ -67,6 +71,50 @@ const Navbar = () => {
         >
           Contact Me
         </a>
+      </div>
+      {/* Mobile View */}
+      <div className="flex md:hidden w-full items-center justify-between">
+        <a
+          href="#home"
+          className="text-2xl text-[#815634] hover:text-[#212121] transition-colors"
+          title="Home"
+        >
+          <TbBrandGoogleHome />
+        </a>
+        <button
+          className="text-3xl text-[#815634] hover:text-[#212121] focus:outline-none"
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-label="Open menu"
+        >
+          <HiMenu />
+        </button>
+        {/* Mobile Dropdown */}
+        {menuOpen && (
+          <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[90vw] max-w-xs bg-white/90 border border-[#bda87c] rounded-xl shadow-lg p-4 flex flex-col gap-3 z-50 animate-fade-in">
+            {navLinks.map(({ href, icon: Icon, title, external }) => (
+              <a
+                key={title}
+                href={href}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noopener noreferrer" : undefined}
+                className="flex items-center gap-3 text-[#815634] hover:text-[#212121] text-lg font-medium px-2 py-2 rounded transition-colors"
+                title={title}
+                onClick={() => setMenuOpen(false)}
+              >
+                <Icon className="text-xl" />
+                <span>{title}</span>
+              </a>
+            ))}
+            <a
+              href="#contact"
+              className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-4 py-2 rounded-xl shadow transition-colors duration-200 text-center mt-2"
+              style={{ whiteSpace: "nowrap" }}
+              onClick={() => setMenuOpen(false)}
+            >
+              Contact Me
+            </a>
+          </div>
+        )}
       </div>
     </nav>
   );

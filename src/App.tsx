@@ -31,7 +31,7 @@ const App = () => {
               sentence="One sec, please..."
               manualMode={false}
               blurAmount={5}
-              borderColor="#bda87c"
+              borderColor="#815634"
               animationDuration={2}
               pauseBetweenAnimations={1}
             />
