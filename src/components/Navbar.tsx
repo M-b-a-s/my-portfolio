@@ -1,6 +1,34 @@
 import { FaHome, FaUser, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 
+const navLinks = [
+  { href: "#about", icon: FaUser, title: "About" },
+  {
+    href: "https://github.com/yourusername",
+    icon: FaGithub,
+    title: "GitHub",
+    external: true,
+  },
+  {
+    href: "https://instagram.com/yourusername",
+    icon: FaLinkedin,
+    title: "LinkedIn",
+    external: true,
+  },
+  {
+    href: "https://instagram.com/yourusername",
+    icon: FaInstagram,
+    title: "Instagram",
+    external: true,
+  },
+  {
+    href: "https://twitter.com/yourusername",
+    icon: FaTwitter,
+    title: "Twitter",
+    external: true,
+  },
+];
+
 const Navbar = () => {
   return (
     <nav
@@ -13,59 +41,28 @@ const Navbar = () => {
       <div className="flex flex-1 items-center justify-between w-full">
         <a
           href="#home"
-          className="text-2xl text-[#bda87c] hover:text-[#212121] transition-colors"
+          className="text-2xl text-[#815634] hover:text-[#212121] transition-colors"
           title="Home"
         >
           <FaHome />
         </a>
         <div className="flex items-center gap-0 border-x border-[#bda87c]">
-          <a
-            href="#about"
-            className="text-2xl text-[#bda87c] hover:text-[#212121] transition-colors px-4"
-            title="About"
-          >
-            <FaUser />
-          </a>
-          <a
-            href="https://github.com/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-2xl text-[#bda87c] hover:text-[#212121] transition-colors px-4"
-            title="GitHub"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://instagram.com/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-2xl text-[#bda87c] hover:text-[#212121] transition-colors px-4"
-            title="LinkedIn"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://instagram.com/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-2xl text-[#bda87c] hover:text-[#212121] transition-colors px-4"
-            title="Instagram"
-          >
-            <FaInstagram />
-          </a>
-          <a
-            href="https://twitter.com/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-2xl text-[#bda87c] hover:text-[#212121] transition-colors px-4"
-            title="Twitter"
-          >
-            <FaTwitter />
-          </a>
+          {navLinks.map(({ href, icon: Icon, title, external }, idx) => (
+            <a
+              key={title}
+              href={href}
+              target={external ? "_blank" : undefined}
+              rel={external ? "noopener noreferrer" : undefined}
+              className="text-2xl text-[#815634] hover:text-[#212121] transition-colors px-4"
+              title={title}
+            >
+              <Icon />
+            </a>
+          ))}
         </div>
         <a
           href="#contact"
-          className="bg-[#bda87c] hover:bg-[#312f2f] text-white font-semibold px-5 py-2 rounded-xl shadow transition-colors duration-200"
+          className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-5 py-2 rounded-xl shadow transition-colors duration-200"
           style={{ whiteSpace: "nowrap" }}
         >
           Contact Me
