@@ -5,25 +5,25 @@ import { HiMenu } from "react-icons/hi";
 const navLinks = [
   { href: "#about", icon: TbUser, title: "About" },
   {
-    href: "https://github.com/yourusername",
+    href: "https://github.com/M-b-a-s",
     icon: TbBrandGithub,
     title: "GitHub",
     external: true,
   },
   {
-    href: "https://instagram.com/yourusername",
+    href: "https://www.linkedin.com/in/ifechimenim",
     icon: TbBrandLinkedin,
     title: "LinkedIn",
     external: true,
   },
   {
-    href: "https://instagram.com/yourusername",
+    href: "https://instagram.com/mbasernest",
     icon: TbBrandInstagram,
     title: "Instagram",
     external: true,
   },
   {
-    href: "https://twitter.com/yourusername",
+    href: "https://twitter.com/mbasernest",
     icon: TbBrandTwitter,
     title: "Twitter",
     external: true,
