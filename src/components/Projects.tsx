@@ -29,7 +29,7 @@ const darkenColor = (hex: string, percent: number): string => {
 };
 
 const Projects: React.FC<ProjectProps> = ({
-  color = "#5227FF",
+  color = "#815634",
   size = 1,
   items = [],
   className = "",

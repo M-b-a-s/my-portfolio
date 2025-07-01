@@ -241,6 +241,28 @@ const Home = () => {
           </h2>
           <Tools items={toolsItems} />
         </section>
+      {/* Footer Section */}
+      <footer className="mt-24">
+        <div className="flex flex-col w-full">
+          <div className="flex w-full max-w-2xl mx-auto">
+            <hr className="flex-grow border-t border-[#e5e5e5]" />
+          </div>
+          <h2 className="text-3xl font-bold text-[#212121] mt-6">Let's Connect</h2>
+          <p className="mt-4 text-slate-600 max-w-xl">
+            Tired of prototypes that never launch or designs that don't convert? I turn ideas into products that actually do the job - and make money. If you're building for impact, not just aesthetics, let's make it real. Serious builders only.
+          </p>
+          <div className="flex items-center gap-4 mt-6">
+            <a href="#contact" className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-6 py-2 rounded-xl shadow transition-colors duration-200">Send Message</a>
+            <span className="text-slate-400 font-semibold">or</span>
+            <a href="#book-call" className="bg-white border border-[#815634] text-[#815634] font-semibold px-6 py-2 rounded-xl shadow transition-colors duration-200">Book a Call</a>
+          </div>
+          <div className="flex items-center w-full max-w-2xl mx-auto mt-10">
+            <hr className="flex-grow border-t border-[#e5e5e5]" />
+          </div>
+          <p className="mt-4 mb-2 text-slate-400 text-xs text-center w-full">&copy; {new Date().getFullYear()} M-b-a-s.</p>
+          <p className=" text-slate-400 text-xs text-center w-full">All rights reserved.</p>
+        </div>
+      </footer>
       </div>
     </div>
   );
