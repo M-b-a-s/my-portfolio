@@ -32,7 +32,7 @@ const Footer = () => {
           <hr className="flex-grow border-t border-[#e5e5e5]" />
         </div>
         <p className="mt-4 mb-2 text-slate-400 text-xs text-center w-full">&copy; {new Date().getFullYear()} M-b-a-s.</p>
-        <p className=" text-slate-400 text-xs text-center w-full">All rights reserved.</p>
+        <p className=" text-slate-400 text-xs text-center w-full pb-6">All rights reserved.</p>
       </div>
     </footer>
   );
