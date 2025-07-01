@@ -123,10 +123,10 @@ const Projects: React.FC<ProjectProps> = ({
             style={{ backgroundColor: folderBackColor }}
           ></span>
           {papers.map((item, i) => {
-            let sizeClasses = "";
-            if (i === 0) sizeClasses = open ? "w-[70%] h-[80%]" : "w-[70%] h-[80%]";
-            if (i === 1) sizeClasses = open ? "w-[80%] h-[80%]" : "w-[80%] h-[70%]" ;
-            if (i === 2) sizeClasses = open ? "w-[90%] h-[80%]" : "w-[90%] h-[60%]";
+            let sizeClasses = "transition-transform duration-200";
+            if (i === 0) sizeClasses += open ? " w-[70%] h-[80%]" : " w-[70%] h-[80%]";
+            if (i === 1) sizeClasses += open ? " w-[80%] h-[80%]" : " w-[80%] h-[70%]";
+            if (i === 2) sizeClasses += open ? " w-[90%] h-[80%]" : " w-[90%] h-[60%]";
 
             const transformStyle = open
               ? `${getOpenTransform(i)} translate(${paperOffsets[i].x}px, ${paperOffsets[i].y}px)`
@@ -140,7 +140,7 @@ const Projects: React.FC<ProjectProps> = ({
                 className={`absolute z-20 bottom-[10%] left-1/2 transition-all duration-300 ease-in-out ${
                   !open
                     ? "transform -translate-x-1/2 translate-y-[10%] group-hover:translate-y-0"
-                    : "hover:scale-110"
+                    : "hover:scale-[2.5] hover:z-30"
                 } ${sizeClasses}`}
                 style={{
                   ...(!open ? {} : { transform: transformStyle }),

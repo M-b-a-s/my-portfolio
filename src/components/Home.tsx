@@ -3,11 +3,13 @@ import meImg from "../assets/me.png";
 import { useState } from "react";
 import { FaChevronDown, FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
 import { SiTypescript, SiVite, SiNextdotjs } from "react-icons/si";
-import Tools from "./Tools"; // Import the Tools component
+import Tools from "./Tools"; 
 import Projects from "./Projects";
+import { AiOutlineLink } from "react-icons/ai";
 
 const Home = () => {
   const [showMore, setShowMore] = useState(false);
+  const [showCallModal, setShowCallModal] = useState(false);
   const aboutParagraphs = [
     "I'm Mbas, a software engineer with a passion for building things that actually work-not just look good in a demo.",
     "What I do: I take messy ideas, half-baked features, or broken workflows and turn them into elegant, usable, and scalable solutions. I care about performance, accessibility, and writing code that stays clean even under pressure.",
@@ -57,7 +59,7 @@ const Home = () => {
       className="block w-full h-full"
     >
       <img
-        src="/public/vite.svg"
+        src="/src/assets/portfolio.png"
         alt="Portfolio Website"
         className="w-full h-full object-cover rounded-lg"
       />
@@ -162,12 +164,15 @@ const Home = () => {
                 <h3 className="text-xl font-semibold text-[#815634]">
                   Product Engineer
                 </h3>
-                <span className="text-slate-100 text-sm px-2 py-1 rounded bg-[#00704a]">
-                  Venueri
-                </span>
-                <span className="text-slate-500 text-sm ml-2">
-                  · 2025 – Present
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm px-2 py-1 rounded bg-[#74c0a7] text-[#00704a] font-semibold flex items-center gap-1 min-w-[120px]">
+                    <AiOutlineLink className="inline-block align-middle text-base mb-[2px]" />
+                    Venueri
+                  </span>
+                  <span className="text-slate-500 text-sm">
+                    · 2025 – Present
+                  </span>
+                </div>
               </div>
               <span className="text-slate-400 text-sm md:text-right">
                 Remote
@@ -184,12 +189,15 @@ const Home = () => {
                 <h3 className="text-xl font-semibold text-[#815634]">
                   Frontend Engineer(Intern)
                 </h3>
-                <span className="text-slate-100 text-sm px-2 py-1 rounded bg-black">
-                  Cyncra Tech.
-                </span>
-                <span className="text-slate-500 text-sm ml-2">
-                  · 2025 - Present
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm px-2 py-1 rounded bg-[#696868] text-black font-semibold flex items-center gap-1 min-w-[120px]">
+                    <AiOutlineLink className="inline-block align-middle text-base mb-[2px]" />
+                    Cyncra Tech
+                  </span>
+                  <span className="text-slate-500 text-sm">
+                    · 2025 - Present
+                  </span>
+                </div>
               </div>
               <span className="text-slate-400 text-sm md:text-right">
                 Remote
@@ -206,10 +214,13 @@ const Home = () => {
                 <h3 className="text-xl font-semibold text-[#815634]">
                   Fullstack Engineer(Intern)
                 </h3>
-                <span className="text-slate-100 text-sm px-2 py-1 rounded bg-gray-500">
-                  Akumzy Tech
-                </span>
-                <span className="text-slate-500 text-sm ml-2">· 2023</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-slate-100 text-sm px-2 py-1 rounded bg-gray-500 font-semibold flex items-center gap-1 min-w-[120px]">
+                    <AiOutlineLink className="inline-block align-middle text-base mb-[2px]" />
+                    Akumzy Tech
+                  </span>
+                  <span className="text-slate-500 text-sm">· 2023</span>
+                </div>
               </div>
               <span className="text-slate-400 text-sm md:text-right">On-Site</span>
             </div>
@@ -221,14 +232,14 @@ const Home = () => {
         </section>
         {/* Projects Section */}
         <section id="projects" className="mt-20 px-4">
-          <h2 className="text-3xl font-bold text-[#212121] mb-4">Projects</h2>
+          <h2 className="text-3xl font-bold text-[#212121] mb-8">Projects</h2>
           <div className="flex justify-center">
-            <Projects color="#5227FF" items={projectItems} />
+            <Projects color="#815634" items={projectItems} />
           </div>
           <div className="flex justify-center mt-6">
             <a
               href="#"
-              className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-6 py-2 rounded-xl shadow transition-colors duration-200"
+              className="bg-white border border-[#815634] hover:bg-[#312f2f] hover:text-white text-[#615634] font-semibold px-6 py-2 rounded-xl shadow transition-colors duration-200"
             >
               More Projects
             </a>
@@ -252,10 +263,21 @@ const Home = () => {
             Tired of prototypes that never launch or designs that don't convert? I turn ideas into products that actually do the job - and make money. If you're building for impact, not just aesthetics, let's make it real. Serious builders only.
           </p>
           <div className="flex items-center gap-4 mt-6">
-            <a href="#contact" className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-6 py-2 rounded-xl shadow transition-colors duration-200">Send Message</a>
+            <a href="mailto:mbas750@gmail.com" className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-6 py-2 rounded-xl shadow transition-colors duration-200">Send Message</a>
             <span className="text-slate-400 font-semibold">or</span>
-            <a href="#book-call" className="bg-white border border-[#815634] text-[#815634] font-semibold px-6 py-2 rounded-xl shadow transition-colors duration-200">Book a Call</a>
+            <button onClick={() => setShowCallModal(true)} className="bg-white border border-[#815634] text-[#815634] font-semibold px-6 py-2 rounded-xl shadow transition-colors duration-200 hover:cursor-pointer">Book a Call</button>
           </div>
+          {/* Modal for Book a Call */}
+          {showCallModal && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm" onClick={() => setShowCallModal(false)}>
+              <div className="bg-white rounded-xl shadow-2xl p-8 max-w-lg w-full relative flex flex-col items-center" onClick={e => e.stopPropagation()}>
+                <button className="absolute top-4 right-4 text-2xl text-slate-400 hover:text-[#815634] focus:outline-none" onClick={() => setShowCallModal(false)} aria-label="Close modal">&times;</button>
+                <h3 className="text-2xl font-bold mb-4 text-[#212121]">Schedule a Call</h3>
+                <p className="mb-6 text-slate-600 text-center">You’ll be redirected to my Cal.com page to book a time that works for you.</p>
+                <a href="https://cal.com/m-b-a-s" target="_blank" rel="noopener noreferrer" className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-6 py-2 rounded-xl shadow transition-colors duration-200">Go to Cal.com</a>
+              </div>
+            </div>
+          )}
           <div className="flex items-center w-full max-w-2xl mx-auto mt-10">
             <hr className="flex-grow border-t border-[#e5e5e5]" />
           </div>
