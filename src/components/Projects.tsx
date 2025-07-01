@@ -75,7 +75,7 @@ const Projects: React.FC<ProjectProps> = ({
   };
 
   const handlePaperMouseLeave = (
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    _e: React.MouseEvent<HTMLDivElement, MouseEvent>,
     index: number
   ) => {
     setPaperOffsets((prev) => {
@@ -135,8 +135,8 @@ const Projects: React.FC<ProjectProps> = ({
             return (
               <div
                 key={i}
-                onMouseMove={(e) => handlePaperMouseMove(e, i)}
-                onMouseLeave={(e) => handlePaperMouseLeave(e, i)}
+                onMouseMove={open ? (e) => handlePaperMouseMove(e, i) : undefined}
+                onMouseLeave={open ? (e) => handlePaperMouseLeave(e, i) : undefined}
                 className={`absolute z-20 bottom-[10%] left-1/2 transition-all duration-300 ease-in-out ${
                   !open
                     ? "transform -translate-x-1/2 translate-y-[10%] group-hover:translate-y-0"
