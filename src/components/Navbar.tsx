@@ -52,7 +52,7 @@ const Navbar = () => {
           <TbBrandGoogleHome />
         </a>
         <div className="flex flex-1 items-center justify-between gap-0 border-x border-[#815634] mx-7">
-          {navLinks.map(({ href, icon: Icon, title, external }, idx) => (
+          {navLinks.map(({ href, icon: Icon, title, external }) => (
             <a
               key={title}
               href={href}
@@ -110,7 +110,6 @@ const Navbar = () => {
               href="mailto:mbas750@gmail.com"
               className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-4 py-2 rounded-xl shadow transition-colors duration-200 text-center mt-2"
               style={{ whiteSpace: "nowrap" }}
-              onClick={() => setMenuOpen(false)}
             >
               Contact Me
             </a>
