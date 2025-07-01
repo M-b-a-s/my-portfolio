@@ -80,7 +80,8 @@ const Home = () => {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
               <div>
                 <h3 className="text-xl font-semibold text-[#815634]">Product Engineer</h3>
-                <span className="text-slate-500 text-sm">Venueri · 2025 – Present</span>
+                <span className="text-slate-100 text-sm px-2 py-1 rounded bg-[#00704a]">Venueri</span>
+                <span className="text-slate-500 text-sm ml-2">· 2025 – Present</span>
               </div>
               <span className="text-slate-400 text-sm md:text-right">Remote</span>
             </div>
@@ -91,7 +92,8 @@ const Home = () => {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
               <div>
                 <h3 className="text-xl font-semibold text-[#815634]">Frontend Intern</h3>
-                <span className="text-slate-500 text-sm">Cyncra Tech. · 2025 - Present</span>
+                <span className="text-slate-100 text-sm px-2 py-1 rounded bg-black">Cyncra Tech.</span>
+                <span className="text-slate-500 text-sm ml-2">· 2025 - Present</span>
               </div>
               <span className="text-slate-400 text-sm md:text-right">Remote</span>
             </div>
@@ -102,7 +104,8 @@ const Home = () => {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
               <div>
                 <h3 className="text-xl font-semibold text-[#815634]">Fullstack Intern</h3>
-                <span className="text-slate-500 text-sm">Akumzy Tech · 2023</span>
+                <span className="text-slate-100 text-sm px-2 py-1 rounded bg-gray-500">Akumzy Tech</span>
+                <span className="text-slate-500 text-sm ml-2">· 2023</span>
               </div>
               <span className="text-slate-400 text-sm md:text-right">On-Site</span>
             </div>

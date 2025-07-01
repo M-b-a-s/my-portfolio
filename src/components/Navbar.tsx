@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { TbBrandGithub, TbBrandGoogleHome, TbBrandInstagram, TbBrandLinkedin, TbBrandTwitter, TbUser } from "react-icons/tb";
 import { HiMenu } from "react-icons/hi";
+import { IoMdClose } from "react-icons/io";
 
 const navLinks = [
   { href: "#about", icon: TbUser, title: "About" },
@@ -84,9 +85,9 @@ const Navbar = () => {
         <button
           className="text-3xl text-[#815634] hover:text-[#212121] focus:outline-none"
           onClick={() => setMenuOpen((open) => !open)}
-          aria-label="Open menu"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
-          <HiMenu />
+          {menuOpen ? <IoMdClose /> : <HiMenu />}
         </button>
         {/* Mobile Dropdown */}
         {menuOpen && (
