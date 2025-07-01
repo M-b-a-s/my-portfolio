@@ -66,7 +66,7 @@ const Navbar = () => {
           ))}
         </div>
         <a
-          href="#contact"
+          href="mailto:mbas750@gmail.com"
           className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-5 py-2 rounded-lg shadow transition-colors duration-200"
           style={{ whiteSpace: "nowrap" }}
         >
@@ -107,7 +107,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="#contact"
+              href="mailto:mbas750@gmail.com"
               className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-4 py-2 rounded-xl shadow transition-colors duration-200 text-center mt-2"
               style={{ whiteSpace: "nowrap" }}
               onClick={() => setMenuOpen(false)}
