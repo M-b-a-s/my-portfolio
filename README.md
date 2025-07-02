@@ -1,69 +1,91 @@
-# React + TypeScript + Vite
+# 🚀 Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, animated, and responsive developer portfolio built with **React**, **TypeScript**, **Vite**, and **Framer Motion**.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡️ **Blazing Fast**: Powered by Vite for instant reloads and builds.
+- 🎨 **Beautiful Animations**: Smooth section reveals and transitions using Framer Motion.
+- 📱 **Responsive Design**: Looks great on all devices.
+- 🧑‍💻 **Type Safe**: Built with TypeScript for robust, maintainable code.
+- 🧩 **Modular Components**: Easy to extend and customize.
+- 🌙 **Glassmorphism UI**: Modern, elegant glass-like effects in the navbar and buttons.
+- 🧭 **Accessible Navigation**: Keyboard and screen reader friendly.
 
-## Expanding the ESLint configuration
+## 📸 Preview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+![Portfolio Preview](./screenshot.png) <!-- Add a screenshot of your site here -->
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [pnpm](https://pnpm.io/) or [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Installation
+
+```bash
+git clone https://github.com/yourusername/portfolio.git
+cd portfolio
+pnpm install # or npm install or yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm dev # or npm run dev or yarn dev
 ```
+
+Visit [http://localhost:5173](http://localhost:5173) to view your portfolio.
+
+### Production Build
+
+```bash
+pnpm build # or npm run build or yarn build
+```
+
+### Preview Production Build
+
+```bash
+pnpm preview # or npm run preview or yarn preview
+```
+
+## 🧩 Project Structure
+
+```
+src/
+  components/    # React components (Navbar, Hero, About, etc.)
+  lib/           # Custom hooks (e.g., useInView)
+  assets/        # Images and static assets
+  App.tsx        # Main app entry
+  main.tsx       # Vite entry point
+```
+
+## 📝 Customization
+
+- **Content**: Edit your info and sections in the components inside `src/components/`.
+- **Styling**: Tailwind CSS classes are used throughout for easy customization.
+- **Animations**: Section animations are handled with Framer Motion and a custom `useInView` hook.
+
+## 🧪 Linting & Formatting
+
+This project uses ESLint and Prettier for code quality and formatting.  
+You can expand the ESLint configuration for stricter rules or React-specific linting as needed.
+
+## 📦 Dependencies
+
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## 📄 License
+
+MIT License.  
+Feel free to fork and customize!
+
+---
+
+> _Built and designed by Mbas. Inspired by modern developer portfolio best practices._
