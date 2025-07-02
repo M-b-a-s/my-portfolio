@@ -12,10 +12,10 @@ const Footer = () => {
         <p className="mt-4 text-slate-600 max-w-xl">
           Tired of prototypes that never launch or designs that don't convert? I turn ideas into products that actually do the job - and make money. If you're building for impact, not just aesthetics, let's make it real. Serious builders only.
         </p>
-        <div className="flex items-center gap-4 mt-6">
-          <a href="mailto:mbas750@gmail.com" className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-6 py-2 rounded-xl shadow transition-colors duration-200">Send Message</a>
-          <span className="text-slate-400 font-semibold">or</span>
-          <button onClick={() => setShowCallModal(true)} className="bg-white border border-[#815634] text-[#815634] font-semibold px-6 py-2 rounded-xl shadow transition-colors duration-200 hover:cursor-pointer">Book a Call</button>
+        <div className="flex items-center gap-4 mt-6 flex-wrap">
+          <a href="mailto:mbas750@gmail.com" className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold rounded-xl shadow transition-colors duration-200 md:px-6 md:py-2 md:text-base px-3 py-1.5 text-sm">Send Message</a>
+          <span className="text-slate-400 font-semibold hidden md:inline">or</span>
+          <button onClick={() => setShowCallModal(true)} className="bg-white border border-[#815634] text-[#815634] font-semibold rounded-xl shadow transition-colors duration-200 hover:cursor-pointer md:px-6 md:py-2 md:text-base px-3 py-1.5 text-sm">Book a Call</button>
         </div>
         {/* Modal for Book a Call */}
         {showCallModal && (

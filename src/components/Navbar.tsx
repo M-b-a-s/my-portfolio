@@ -48,6 +48,7 @@ const Navbar = () => {
           href="#home"
           className="text-2xl text-[#815634] hover:text-[#212121] transition-colors"
           title="Home"
+          onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
         >
           <TbBrandGoogleHome />
         </a>
@@ -79,6 +80,7 @@ const Navbar = () => {
           href="#home"
           className="text-2xl text-[#815634] hover:text-[#212121] transition-colors"
           title="Home"
+          onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
         >
           <TbBrandGoogleHome />
         </a>

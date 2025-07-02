@@ -6,7 +6,7 @@ const aboutParagraphs = [
   "What I do: I take messy ideas, half-baked features, or broken workflows and turn them into elegant, usable, and scalable solutions. I care about performance, accessibility, and writing code that stays clean even under pressure.",
   "I've contributed to meaningful projects across startups and personal experiments alike-some built to solve real pain points, others just for fun. Either way I learn fast and ship faster.",
   "When I'm not coding, I'm exploring product ideas, fine-tuning my dev sense, or playing the piano. I also question tabs vs spaces more often than I should.",
-  "I don't just build apps, I build tools peop;e actually want to use.",
+  "I don't just build apps, I build tools people actually want to use.",
 ];
 
 const About = () => {

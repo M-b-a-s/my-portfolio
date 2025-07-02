@@ -1,14 +1,16 @@
 import Projects from "./Projects";
+import portfolioImg from "../assets/portfolio.png";
+import viteSvg from "../../public/vite.svg";
 
 const projectItems = [
   <a
-    href="https://your-portfolio-site.com"
+    href="https://www.m-b-a-s.vercel.app"
     target="_blank"
     rel="noopener noreferrer"
     className="block w-full h-full"
   >
     <img
-      src="/src/assets/portfolio.png"
+      src={portfolioImg}
       alt="Portfolio Website"
       className="w-full h-full object-cover rounded-lg"
     />
@@ -20,7 +22,7 @@ const projectItems = [
     className="block w-full h-full"
   >
     <img
-      src="/public/vite.svg"
+      src={viteSvg}
       alt="AI Chatbot"
       className="w-full h-full object-cover rounded-lg"
     />
@@ -32,7 +34,7 @@ const projectItems = [
     className="block w-full h-full"
   >
     <img
-      src="/public/vite.svg"
+      src={viteSvg}
       alt="E-commerce Dashboard"
       className="w-full h-full object-cover rounded-lg"
     />
