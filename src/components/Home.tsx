@@ -16,7 +16,7 @@ const sectionVariants = {
 
 interface AnimatedSectionProps {
   children: ReactNode;
-  refObj: RefObject<HTMLElement>;
+  refObj: RefObject<HTMLElement | null>;
   inView: boolean;
   hasAnimated: boolean;
 }
