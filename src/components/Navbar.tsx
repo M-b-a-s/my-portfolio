@@ -18,13 +18,13 @@ const navLinks = [
     external: true,
   },
   {
-    href: "https://instagram.com/mbasernest",
+    href: "https://instagram.com/mbas_ernest",
     icon: TbBrandInstagram,
     title: "Instagram",
     external: true,
   },
   {
-    href: "https://twitter.com/mbasernest",
+    href: "https://x.com/ernest_mbas",
     icon: TbBrandTwitter,
     title: "Twitter",
     external: true,
