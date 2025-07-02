@@ -14,10 +14,10 @@ const sectionVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.7,
-      ease: [0.42, 0, 1, 1], // cubic-bezier for easeOut
-    },
+    // transition: {
+    //   duration: 0.7,
+    //   ease: [0, 0, 0.58, 1], // cubic-bezier for easeOut
+    // },
   },
 };
 
