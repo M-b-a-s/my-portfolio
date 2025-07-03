@@ -2,6 +2,7 @@ import { useState } from "react";
 import { TbBrandGithub, TbBrandGoogleHome, TbBrandInstagram, TbBrandLinkedin, TbBrandTwitter, TbUser } from "react-icons/tb";
 import { HiMenu } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
+import { ModeToggle } from "./mode-toggle";
 
 const navLinks = [
   { href: "#about", icon: TbUser, title: "About" },
@@ -73,17 +74,23 @@ const Navbar = () => {
         >
           Contact Me
         </a>
+        <div className="fixed top-4 right-8 z-50">
+          <ModeToggle />
+        </div>
       </div>
       {/* Mobile View */}
       <div className="flex md:hidden w-full items-center justify-between">
-        <a
-          href="#home"
-          className="text-2xl text-[#815634] hover:text-[#212121] transition-colors"
-          title="Home"
-          onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-        >
-          <TbBrandGoogleHome />
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href="#home"
+            className="text-2xl text-[#815634] hover:text-[#212121] transition-colors"
+            title="Home"
+            onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          >
+            <TbBrandGoogleHome />
+          </a>
+          <ModeToggle />
+        </div>
         <button
           className="text-3xl text-[#815634] hover:text-[#212121] focus:outline-none"
           onClick={() => setMenuOpen((open) => !open)}
