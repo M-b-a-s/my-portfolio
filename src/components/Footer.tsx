@@ -14,7 +14,6 @@ const Footer = () => {
         </p>
         <div className="flex items-center gap-4 mt-6 flex-wrap">
           <a href="mailto:mbas750@gmail.com" className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold rounded-xl shadow transition-colors duration-200 md:px-6 md:py-2 md:text-base px-3 py-1.5 text-sm">Send Message</a>
-          <span className="text-slate-400 font-semibold hidden md:inline">or</span>
           <button onClick={() => setShowCallModal(true)} className="bg-white border border-[#815634] text-[#815634] font-semibold rounded-xl shadow transition-colors duration-200 hover:cursor-pointer md:px-6 md:py-2 md:text-base px-3 py-1.5 text-sm">Book a Call</button>
         </div>
         {/* Modal for Book a Call */}

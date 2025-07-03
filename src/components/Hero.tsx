@@ -27,11 +27,7 @@ const Hero = () => (
       <a
         href="#"
         className="backdrop-blur-md bg-white/30 border border-[#815634] text-[#815634] font-semibold rounded-r-xl shadow transition-colors duration-200 hover:bg-white/50 hover:border-[#815634] md:px-4 md:py-1.5 md:text-base px-2.5 py-1 text-sm opacity-100 pointer-events-auto cursor-pointer"
-        style={{
-          boxShadow: "0 4px 24px 0 rgba(31, 38, 135, 0.15)",
-          WebkitBackdropFilter: "blur(8px)",
-          backdropFilter: "blur(8px)",
-        }}
+        
       >
         · open to opportunities
       </a>
