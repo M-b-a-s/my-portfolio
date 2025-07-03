@@ -2,7 +2,6 @@ import { useState } from "react";
 import { TbBrandGithub, TbBrandGoogleHome, TbBrandInstagram, TbBrandLinkedin, TbBrandTwitter, TbUser } from "react-icons/tb";
 import { HiMenu } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
-import { ModeToggle } from "./mode-toggle";
 
 const navLinks = [
   { href: "#about", icon: TbUser, title: "About" },
@@ -47,7 +46,7 @@ const Navbar = () => {
       <div className="hidden md:flex flex-1 items-center justify-between w-full">
         <a
           href="#home"
-          className="text-2xl text-[#815634] hover:text-[#212121] transition-colors"
+          className="text-2xl text-[#815634] transition-colors"
           title="Home"
           onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
         >
@@ -60,7 +59,7 @@ const Navbar = () => {
               href={href}
               target={external ? "_blank" : undefined}
               rel={external ? "noopener noreferrer" : undefined}
-              className="text-2xl flex-1 flex justify-center items-center text-[#815634] hover:text-[#212121] transition-colors px-2"
+              className="text-2xl flex-1 flex justify-center items-center text-[#815634] transition-colors px-2"
               title={title}
             >
               <Icon />
@@ -74,9 +73,6 @@ const Navbar = () => {
         >
           Contact Me
         </a>
-        <div className="fixed top-4 right-8 z-50">
-          <ModeToggle />
-        </div>
       </div>
       {/* Mobile View */}
       <div className="flex md:hidden w-full items-center justify-between">
@@ -89,7 +85,6 @@ const Navbar = () => {
           >
             <TbBrandGoogleHome />
           </a>
-          <ModeToggle />
         </div>
         <button
           className="text-3xl text-[#815634] hover:text-[#212121] focus:outline-none"

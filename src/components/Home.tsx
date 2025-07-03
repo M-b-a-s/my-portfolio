@@ -8,6 +8,7 @@ import ProjectsSection from "./ProjectsSection";
 import ToolsSection from "./ToolsSection";
 import Footer from "./Footer";
 import { useInView } from "../lib/useInView";
+import { ModeToggle } from "./mode-toggle";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 60 },
@@ -55,6 +56,9 @@ const Home = () => {
 
   return (
     <div>
+      <div className="fixed bottom-10 right-8 z-50">
+        <ModeToggle />
+      </div>
       <Navbar />
       <div className="mx-auto w-[90vw] md:w-[700px] max-w-full">
         <Hero />
