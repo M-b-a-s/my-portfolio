@@ -20,16 +20,19 @@ const Hero = () => (
     <div className="flex gap-2">
       <a
         href="mailto:mbas750@gmail.com"
-        className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold rounded-l-xl shadow transition-colors duration-200 md:px-6 md:py-2 md:text-base px-3 py-1.5 text-sm"
+        className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold rounded-xl shadow transition-colors duration-200 md:px-6 md:py-2 md:text-base px-8 py-2 text-sm"
       >
-        Hire me
+        Hire Me
       </a>
       <a
         href="#"
-        className="backdrop-blur-md bg-white/30 border border-[#815634] text-[#815634] font-semibold rounded-r-xl shadow transition-colors duration-200 hover:bg-white/50 hover:border-[#815634] md:px-4 md:py-1.5 md:text-base px-2.5 py-1 text-sm opacity-100 pointer-events-auto cursor-pointer"
-        
+        className="border font-semibold rounded-xl shadow transition-colors duration-200 hover:cursor-pointer md:px-6 md:py-2 md:text-base px-3 py-1.5 text-sm flex items-center justify-center
+          md:bg-white md:border-[#815634] md:text-[#815634]
+          bg-[#007848] border-green-600 text-white animate-pulse md:animate-none md:bg-white md:text-[#815634] md:border-[#815634]"
+        style={{ minWidth: 120 }}
       >
-        · open to opportunities
+        <span className="block md:hidden">active</span>
+        <span className="hidden md:block">Open to opportunities</span>
       </a>
     </div>
   </section>

@@ -93,7 +93,7 @@ const Navbar = () => {
         </button>
         {/* Mobile Dropdown */}
         {menuOpen && (
-          <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[90vw] max-w-xs bg-white/90 border border-[#bda87c] rounded-xl shadow-lg p-4 flex flex-col gap-3 z-50 animate-fade-in">
+          <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[90vw] max-w-xs bg-white border border-[#bda87c] rounded-xl shadow-lg p-4 flex flex-col gap-3 z-50 animate-fade-in">
             {navLinks.map(({ href, icon: Icon, title, external }) => (
               <a
                 key={title}
