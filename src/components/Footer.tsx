@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex w-full max-w-2xl mx-auto">
           <hr className="flex-grow border-t border-[#e5e5e5]" />
         </div>
-        <h2 className="text-3xl font-bold text-[#212121] mt-6">Let's Connect</h2>
+        <h2 className="text-3xl font-bold text-[#212121] dark:text-white mt-6">Let's Connect</h2>
         <p className="mt-4 text-slate-600 max-w-xl">
           Tired of prototypes that never launch or designs that don't convert? I turn ideas into products that actually do the job - and make money. If you're building for impact, not just aesthetics, let's make it real. Serious builders only.
         </p>

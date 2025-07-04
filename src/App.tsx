@@ -12,12 +12,12 @@ const App = () => {
     const timer = setTimeout(() => {
       setFadeOut(true);
       setTimeout(() => setShowPreloader(false), 800); // match fade duration
-    }, 10000); // Show preloader for 10 seconds
+    }, 8000); // Show preloader for 8 seconds
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
 
     <div className="min-h-screen w-full relative">
       <AnimatePresence>

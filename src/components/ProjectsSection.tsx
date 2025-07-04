@@ -43,7 +43,9 @@ const projectItems = [
 
 const ProjectsSection = () => (
   <section id="projects" className="mt-20 px-4">
-    <h2 className="text-3xl font-bold text-[#212121] mb-8">Projects</h2>
+    <h2 className="text-3xl font-bold text-[#212121] dark:text-white mb-8">
+      Projects
+    </h2>
     <div className="flex justify-center">
       <Projects color="#815634" items={projectItems} />
     </div>

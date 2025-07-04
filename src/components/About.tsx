@@ -13,7 +13,9 @@ const About = () => {
   const [showMore, setShowMore] = useState(false);
   return (
     <section id="about" className="mt-20 px-4">
-      <h2 className="text-3xl font-bold text-[#212121] mb-4">About</h2>
+      <h2 className="text-3xl font-bold text-[#212121] dark:text-white mb-4">
+        About
+      </h2>
       <div className="space-y-4 text-slate-700 text-lg max-w-2xl">
         {/* Mobile: show only first 3 paragraphs unless showMore is true */}
         <div className="block md:hidden">

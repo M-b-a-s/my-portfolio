@@ -9,8 +9,10 @@ const Hero = () => (
         className="object-cover w-full h-full"
       />
     </div>
-    <h1 className="text-4xl text-[#212121] mb-2">Hi! I'm M-b-a-s</h1>
-    <h2 className="text-xl font-semibold text-[#815634] mb-2">
+    <h1 className="text-4xl text-[#212121] dark:text-white mb-2">
+      Hi! I'm M-b-a-s
+    </h1>
+    <h2 className="text-xl font-semibold text-[#815634] dark:text-[#815634] mb-2">
       Software/AI & ML Engineer
     </h2>
     <p className="text-slate-600 max-w-xl mb-6">
