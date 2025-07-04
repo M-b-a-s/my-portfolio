@@ -30,7 +30,7 @@ const Hero = () => (
         href="#"
         className="border font-semibold rounded-xl shadow transition-colors duration-200 hover:cursor-pointer md:px-6 md:py-2 md:text-base px-3 py-1.5 text-sm flex items-center justify-center
           md:bg-white md:border-[#815634] md:text-[#815634]
-          bg-[#007848] border-green-600 text-white animate-pulse md:animate-none md:bg-white md:text-[#815634] md:border-[#815634]"
+          bg-[#007848] border-green-600 text-white animate-pulse md:animate-none"
         style={{ minWidth: 120 }}
       >
         <span className="block md:hidden">active</span>

@@ -46,8 +46,13 @@ const ProjectsSection = () => (
     <h2 className="text-3xl font-bold text-[#212121] dark:text-white mb-8">
       Projects
     </h2>
-    <div className="flex justify-center">
-      <Projects color="#815634" items={projectItems} />
+    <div className="grid grid-cols-2 md:grid-cols-3 grid-rows-3 md:grid-rows-3 gap-2 m-4">
+      <div className="col-start-1 row-start-1 md:col-start-1 md:row-start-1 md:col-span-1 md:row-span-2 bg-[#815634] rounded-md p-10">0</div>
+      <div className="col-start-1 row-start-2 row-span-2 md:col-start-1 md:row-start-3 md:col-span-2 md:row-span-1 bg-[#815634] rounded-md p-10">1</div>
+      <div className="col-start-2 row-start-1 row-span-2 md:col-start-2 md:row-start-1 md:col-span-2 md:row-span-1 bg-[#815634] rounded-md p-10">3</div>
+      <div className="md:block md:col-start-2 md:row-start-2 md:col-span-1 md:row-span-1 bg-[#815634] rounded-md p-10">4</div>
+      <div className="hidden md:block md:col-start-3 md:row-start-2 md:col-span-1 md:row-span-2 bg-[#815634] rounded-md p-10">5</div>
+      {/* <Projects color="#815634" items={projectItems} /> */}
     </div>
     <div className="flex justify-center mt-6">
       <a

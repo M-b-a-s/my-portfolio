@@ -95,14 +95,14 @@ const Navbar = () => {
         </button>
         {/* Mobile Dropdown */}
         {menuOpen && (
-          <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[90vw] max-w-xs bg-white border border-[#bda87c] rounded-xl shadow-lg p-4 flex flex-col gap-3 z-50 animate-fade-in">
+          <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[90vw] max-w-xs bg-white dark:bg-[#18181b] border border-[#bda87c] rounded-xl shadow-lg p-4 flex flex-col gap-3 z-50 animate-fade-in">
             {navLinks.map(({ href, icon: Icon, title, external }) => (
               <a
                 key={title}
                 href={href}
                 target={external ? "_blank" : undefined}
                 rel={external ? "noopener noreferrer" : undefined}
-                className="flex items-center gap-3 text-[#815634] hover:text-[#212121] text-lg font-medium px-2 py-2 rounded transition-colors"
+                className="flex items-center gap-3 text-[#815634] dark:text-[#f5f5f5] hover:text-[#212121] dark:hover:text-[#ffd700] text-lg font-medium px-2 py-2 rounded transition-colors"
                 title={title}
                 onClick={() => setMenuOpen(false)}
               >
