@@ -16,7 +16,7 @@ const About = () => {
       <h2 className="text-3xl font-bold text-[#212121] dark:text-white mb-4">
         About
       </h2>
-      <div className="space-y-4 text-slate-700 text-lg max-w-2xl">
+      <div className="space-y-4 max-w-2xl">
         {/* Mobile: show only first 3 paragraphs unless showMore is true */}
         <div className="block md:hidden">
           {aboutParagraphs
@@ -34,7 +34,7 @@ const About = () => {
           )}
         </div>
         {/* Desktop: show all paragraphs */}
-        <div className="hidden md:block">
+        <div className="hidden md:block dark:text-[#b9b7b7]">
           {aboutParagraphs.map((text, idx) => (
             <p key={idx}>{text}</p>
           ))}

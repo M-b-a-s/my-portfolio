@@ -3,13 +3,13 @@ import { useState } from "react";
 const Footer = () => {
   const [showCallModal, setShowCallModal] = useState(false);
   return (
-    <footer className="mt-24">
+    <footer className="mt-24 ">
       <div className="flex flex-col w-full">
         <div className="flex w-full max-w-2xl mx-auto">
           <hr className="flex-grow border-t border-[#e5e5e5]" />
         </div>
         <h2 className="text-3xl font-bold text-[#212121] dark:text-white mt-6">Let's Connect</h2>
-        <p className="mt-4 text-slate-600 max-w-xl">
+        <p className="mt-4 max-w-xl dark:text-[#b9b7b7]">
           Tired of prototypes that never launch or designs that don't convert? I turn ideas into products that actually do the job - and make money. If you're building for impact, not just aesthetics, let's make it real. Serious builders only.
         </p>
         <div className="flex items-center gap-2 mt-6 flex-wrap">
@@ -22,7 +22,7 @@ const Footer = () => {
             <div className="bg-white rounded-xl shadow-2xl p-8 max-w-lg w-full relative flex flex-col items-center" onClick={e => e.stopPropagation()}>
               <button className="absolute top-4 right-4 text-2xl text-slate-400 hover:text-[#815634] focus:outline-none" onClick={() => setShowCallModal(false)} aria-label="Close modal">&times;</button>
               <h3 className="text-2xl font-bold mb-4 text-[#212121]">Schedule a Call</h3>
-              <p className="mb-6 text-slate-600 text-center">You’ll be redirected to my Cal.com page to book a time that works for you.</p>
+              <p className="mb-6 text-center">You’ll be redirected to my Cal.com page to book a time that works for you.</p>
               <a href="https://cal.com/m-b-a-s" target="_blank" rel="noopener noreferrer" className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-6 py-2 rounded-xl shadow transition-colors duration-200">Go to Cal.com</a>
             </div>
           </div>

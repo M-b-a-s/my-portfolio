@@ -15,7 +15,7 @@ const Hero = () => (
     <h2 className="text-xl font-semibold text-[#815634] dark:text-[#815634] mb-2">
       Software/AI & ML Engineer
     </h2>
-    <p className="text-slate-600 max-w-xl mb-6">
+    <p className="dark:text-[#b9b7b7] max-w-xl mb-6">
       I build beautiful, performant web apps with React, TypeScript, and
       modern UI frameworks. Let's create something amazing together!
     </p>

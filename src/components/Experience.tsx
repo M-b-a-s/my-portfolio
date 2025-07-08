@@ -50,16 +50,16 @@ const Experience = () => (
 									<AiOutlineLink className="inline-block align-middle text-base mb-[2px]" />
 									{exp.company}
 								</span>
-								<span className="text-slate-500 text-sm">
+								<span className="text-sm">
 									· {exp.year}
 								</span>
 							</div>
 						</div>
-						<span className="text-slate-400 text-sm md:text-right">
+						<span className="text-sm md:text-right">
 							{exp.location}
 						</span>
 					</div>
-					<p className="text-slate-700 text-base">{exp.description}</p>
+					<p className="text-base dark:text-[#b9b7b7]">{exp.description}</p>
 				</div>
 			))}
 		</div>
