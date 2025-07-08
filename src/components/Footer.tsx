@@ -22,7 +22,7 @@ const Footer = () => {
             <div className="bg-white rounded-xl shadow-2xl p-8 max-w-lg w-full relative flex flex-col items-center" onClick={e => e.stopPropagation()}>
               <button className="absolute top-4 right-4 text-2xl text-slate-400 hover:text-[#815634] focus:outline-none" onClick={() => setShowCallModal(false)} aria-label="Close modal">&times;</button>
               <h3 className="text-2xl font-bold mb-4 text-[#212121]">Schedule a Call</h3>
-              <p className="mb-6 text-center">You’ll be redirected to my Cal.com page to book a time that works for you.</p>
+              <p className="mb-6 text-slate-950 text-center">You’ll be redirected to my Cal.com page to book a time that works for you.</p>
               <a href="https://cal.com/m-b-a-s" target="_blank" rel="noopener noreferrer" className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-6 py-2 rounded-xl shadow transition-colors duration-200">Go to Cal.com</a>
             </div>
           </div>
