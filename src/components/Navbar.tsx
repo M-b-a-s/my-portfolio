@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TbBrandGithub, TbBrandGoogleHome, TbBrandInstagram, TbBrandLinkedin, TbBrandTwitter, TbUser } from "react-icons/tb";
+import { TbBrandGithub, TbBrandGoogleHome, TbBrandInstagram, TbBrandLinkedin, TbUser, TbBrandX } from "react-icons/tb";
 import { HiMenu } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 
@@ -25,8 +25,8 @@ const navLinks = [
   },
   {
     href: "https://x.com/ernest_mbas",
-    icon: TbBrandTwitter,
-    title: "Twitter",
+    icon: TbBrandX,
+    title: "Twitter(X)",
     external: true,
   },
 ];
