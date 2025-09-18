@@ -14,7 +14,7 @@ const experiences = [
 		title: "Frontend Engineer(Intern)",
 		company: "Cyncra Tech",
 		companyBg: "bg-[#696868] text-black",
-		year: "2025 - Present",
+		year: "2025",
 		location: "Remote",
 		description:
 			"Built responsive web applications using React and TypeScript, collaborated with designers to implement UI/UX improvements, and optimized performance for better user experience.",
