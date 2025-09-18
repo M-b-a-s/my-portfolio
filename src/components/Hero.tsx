@@ -1,8 +1,8 @@
 import meImg from "../assets/me.png";
 
 const Hero = () => (
-  <section className="flex flex-col justify-center mt-32 px-4 ">
-    <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-[#815634] shadow-lg mb-6 flex items-center justify-center bg-white">
+  <section className="flex flex-col justify-center mt-24 lg:mt-32 px-4 ">
+    <div className="w-30 h-30 rounded-full overflow-hidden border-4 border-[#815634] shadow-lg mb-6 flex items-center justify-center bg-white">
       <img
         src={meImg}
         alt="M-b-a-s"
