@@ -13,11 +13,10 @@ const Hero = () => (
       Hi! I'm M-b-a-s
     </h1>
     <h2 className="text-xl font-semibold text-[#815634] dark:text-[#815634] mb-2">
-      Software/AI & ML Engineer
+      Software & QA Engineer
     </h2>
     <p className="dark:text-[#b9b7b7] max-w-xl mb-6">
-      I build beautiful, performant web apps with React, TypeScript, and
-      modern UI frameworks. Let's create something amazing together!
+      I craft reliable, high-performing software and ensure every product meets the highest standards of quality. From building modern web apps to designing effective testing strategies, I bridge the gap between development and QA to deliver excellence.
     </p>
     <div className="flex gap-2">
       <a
