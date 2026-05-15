@@ -60,7 +60,7 @@ const Home = () => {
         <ModeToggle />
       </div>
       <Navbar />
-      <div className="mx-auto w-[90vw] md:w-[700px] max-w-full">
+      <div className="mx-auto max-w-full">
         <Hero />
         <AnimatedSection refObj={aboutRef} inView={aboutInView} hasAnimated={hasAnimated}>
           <About />

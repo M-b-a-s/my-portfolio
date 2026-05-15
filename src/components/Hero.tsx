@@ -1,42 +1,90 @@
+import { useRef } from "react";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import meImg from "../assets/me.png";
 
-const Hero = () => (
-  <section className="flex flex-col justify-center mt-24 lg:mt-32 px-4 ">
-    <div className="lg:w-40 lg:h-40 w-20 h-20 rounded-full overflow-hidden border-2 lg:border-4 border-[#815634] shadow-lg mb-6 flex items-center justify-center bg-white">
-      <img
-        src={meImg}
-        alt="M-b-a-s"
-        className="object-cover w-full h-full"
-      />
-    </div>
-    <h1 className="text-4xl text-[#212121] dark:text-white mb-2">
-      Hi! I'm M-b-a-s
-    </h1>
-    <h2 className="text-xl font-semibold text-[#815634] dark:text-[#815634] mb-2">
-      Software & QA Engineer
-    </h2>
-    <p className="dark:text-[#b9b7b7] max-w-xl mb-6">
-      I craft reliable, high-performing software and ensure every product meets the highest standards of quality. From building modern web apps to designing effective testing strategies, I bridge the gap between development and QA to deliver excellence.
-    </p>
-    <div className="flex gap-2">
-      <a
-        href="mailto:mbas750@gmail.com"
-        className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold rounded-xl shadow transition-colors duration-200 md:px-6 md:py-2 md:text-base px-8 py-2 text-sm"
-      >
-        Hire Me
-      </a>
-      <a
-        href="#"
-        className="border font-semibold rounded-xl shadow transition-colors duration-200 hover:cursor-pointer md:px-6 md:py-2 md:text-base px-3 py-1.5 text-sm flex items-center justify-center
-          md:bg-white md:border-[#815634] md:text-[#815634]
-          bg-[#007848] border-green-600 text-white animate-pulse md:animate-none"
-        style={{ minWidth: 120 }}
-      >
-        <span className="block md:hidden">active</span>
-        <span className="hidden md:block">Open to opportunities</span>
-      </a>
-    </div>
-  </section>
-);
+const Hero = () => {
+  const displayName = "Ifechimenim Ikwukala-Mbas — ";
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const nameX = useSpring(useTransform(scrollYProgress, [0, 1], [72, -180]), {
+    stiffness: 80,
+    damping: 24,
+    mass: 0.4,
+  });
+
+  return (
+    <section
+      ref={heroRef}
+      className="relative w-full min-h-screen flex flex-col justify-between overflow-hidden bg-cover bg-top"
+      style={{
+        backgroundImage: `url(${meImg})`,
+        backgroundPosition: "top center",
+      }}
+    >
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/30"></div>
+
+      {/* Top content - Location badge */}
+      <div className="absolute z-10 top-[40%] left-0 p-4 rounded-r-full bg-black">
+        <div className="flex items-center gap-3 w-fit">
+          <div className="bg-white rounded-full p-3">
+            <svg
+              className="w-5 h-5 text-black"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+          <div className="text-white text-sm">
+            <p>Located in</p>
+            <p className="font-semibold">Nigeria</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Right side content - Title */}
+      <div className="absolute z-10 top-[40%] right-0 pr-8 hidden md:block">
+        <p className="text-2xl text-white mb-4">
+          DevOps & <br />Cloud Engineer
+        </p>
+      </div>
+
+      {/* Bottom - Full width name */}
+      <div className="absolute bottom-0 z-10 w-full overflow-hidden py-12">
+        <motion.div
+          className="w-max"
+          style={{ x: nameX }}
+        >
+          <motion.div
+            className="flex w-max whitespace-nowrap"
+            animate={{ x: ["-50%", "0%"] }}
+            transition={{
+              duration: 18,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+          >
+            {[displayName, displayName].map((name, index) => (
+              <h1
+                key={index}
+                className="pr-10 text-xl md:pr-16 md:text-9xl lg:text-8xl font-bold text-white leading-none"
+              >
+                {name}
+              </h1>
+            ))}
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
 
 export default Hero;
