@@ -3,18 +3,25 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "@/components/theme-provider"
 import Preloader from "./components/Preloader";
 import Home from "./components/Home";
+import AboutPage from "./components/AboutPage";
 
 const App = () => {
+  const isAboutPage = window.location.pathname === "/about";
   const [showPreloader, setShowPreloader] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
+    if (isAboutPage) {
+      setShowPreloader(false);
+      return;
+    }
+
     const timer = setTimeout(() => {
       setFadeOut(true);
       setTimeout(() => setShowPreloader(false), 800); // match fade duration
     }, 8000); // Show preloader for 8 seconds
     return () => clearTimeout(timer);
-  }, []);
+  }, [isAboutPage]);
 
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
@@ -41,7 +48,7 @@ const App = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      {!showPreloader && <Home />}
+      {!showPreloader && (isAboutPage ? <AboutPage /> : <Home />)}
     </div>
     </ThemeProvider>
   );
