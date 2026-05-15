@@ -3,7 +3,7 @@ import { useState } from "react";
 const Footer = () => {
   const [showCallModal, setShowCallModal] = useState(false);
   return (
-    <footer className="mt-24 ">
+    <footer id="contact" className="mt-24 ">
       <div className="flex flex-col w-full">
         <div className="flex w-full max-w-2xl mx-auto">
           <hr className="flex-grow border-t border-[#e5e5e5]" />

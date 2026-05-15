@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import meImg from "../assets/me.png";
+import { ArrowDownRight } from "lucide-react";
 
 const Hero = () => {
   const displayName = "Ifechimenim Ikwukala-Mbas — ";
@@ -17,6 +18,7 @@ const Hero = () => {
 
   return (
     <section
+      id="home"
       ref={heroRef}
       className="relative w-full min-h-screen flex flex-col justify-between overflow-hidden bg-cover bg-top"
       style={{
@@ -28,7 +30,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/30"></div>
 
       {/* Top content - Location badge */}
-      <div className="absolute z-10 top-[40%] left-0 p-4 rounded-r-full bg-black">
+      <div className="absolute z-10 top-[40%] left-0 p-4 rounded-r-full bg-black/80">
         <div className="flex items-center gap-3 w-fit">
           <div className="bg-white rounded-full p-3">
             <svg
@@ -51,7 +53,8 @@ const Hero = () => {
       </div>
 
       {/* Right side content - Title */}
-      <div className="absolute z-10 top-[40%] right-0 pr-8 hidden md:block">
+      <div className="absolute z-10 top-[35%] right-0 pr-8 hidden md:block">
+        <ArrowDownRight className="text-white"/>
         <p className="text-2xl text-white mb-4">
           DevOps & <br />Cloud Engineer
         </p>

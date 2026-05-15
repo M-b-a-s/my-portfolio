@@ -1,126 +1,172 @@
-import { useState } from "react";
-import { TbBrandGithub, TbBrandGoogleHome, TbBrandInstagram, TbBrandLinkedin, TbUser, TbBrandX } from "react-icons/tb";
-import { HiMenu } from "react-icons/hi";
-import { IoMdClose } from "react-icons/io";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
-const navLinks = [
-  { href: "#about", icon: TbUser, title: "About" },
-  {
-    href: "https://github.com/M-b-a-s",
-    icon: TbBrandGithub,
-    title: "GitHub",
-    external: true,
-  },
-  {
-    href: "https://www.linkedin.com/in/ifechimenim",
-    icon: TbBrandLinkedin,
-    title: "LinkedIn",
-    external: true,
-  },
-  {
-    href: "https://instagram.com/mbas_ernest",
-    icon: TbBrandInstagram,
-    title: "Instagram",
-    external: true,
-  },
-  {
-    href: "https://x.com/ernest_mbas",
-    icon: TbBrandX,
-    title: "Twitter(X)",
-    external: true,
-  },
+const navigationLinks = [
+  { href: "#home", title: "Home" },
+  { href: "#projects", title: "Work" },
+  { href: "#about", title: "About" },
+  { href: "#contact", title: "Contact" },
 ];
+
+const socialLinks = [
+  { href: "https://github.com/M-b-a-s", title: "GitHub" },
+  { href: "https://www.linkedin.com/in/ifechimenim", title: "LinkedIn" },
+  { href: "https://instagram.com/mbas_ernest", title: "Instagram" },
+  { href: "https://x.com/ernest_mbas", title: "Twitter" },
+];
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 90);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  const handleNavClick = (href: string) => {
+    setMenuOpen(false);
+
+    if (href === "#home") {
+      scrollToTop();
+    }
+  };
 
   return (
-    <nav
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90vw] md:w-[700px] max-w-full backdrop-blur-lg bg-white/10 border border-[#bda87c] shadow-lg flex items-center pl-6 pr-2 py-3 rounded-xl transition-all duration-300"
-      style={{
-        backdropFilter: "blur(16px) saturate(180%)",
-        WebkitBackdropFilter: "blur(16px) saturate(180%)",
-      }}
-    >
-      {/* Desktop View */}
-      <div className="hidden md:flex flex-1 items-center justify-between w-full">
-        <a
-          href="#home"
-          className="text-2xl text-[#815634] transition-colors"
-          title="Home"
-          onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-        >
-          <TbBrandGoogleHome />
-        </a>
-        <div className="flex flex-1 items-center justify-between gap-0 border-x border-[#815634] mx-7">
-          {navLinks.map(({ href, icon: Icon, title, external }) => (
-            <a
-              key={title}
-              href={href}
-              target={external ? "_blank" : undefined}
-              rel={external ? "noopener noreferrer" : undefined}
-              className="text-2xl flex-1 flex justify-center items-center text-[#815634] transition-colors px-2"
-              title={title}
-            >
-              <Icon />
-            </a>
-          ))}
-        </div>
-        <a
-          href="mailto:mbas750@gmail.com"
-          className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-5 py-2 rounded-lg shadow transition-colors duration-200"
-          style={{ whiteSpace: "nowrap" }}
-        >
-          Contact Me
-        </a>
-      </div>
-      {/* Mobile View */}
-      <div className="flex md:hidden w-full items-center justify-between">
-        <div className="flex items-center gap-2">
-          <a
-            href="#home"
-            className="text-2xl text-[#815634] hover:text-[#212121] transition-colors"
-            title="Home"
-            onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+    <>
+      <nav className="fixed right-0 top-0 z-50 px-4 py-5">
+        <div className="flex items-center justify-between">
+
+          <div
+            className={`hidden items-center gap-8 rounded-full bg-black/75 px-6 py-3 text-sm font-semibold text-white shadow-lg backdrop-blur-md transition-all duration-300 md:flex ${
+              hasScrolled
+                ? "translate-y-[-120%] opacity-0 pointer-events-none"
+                : "translate-y-0 opacity-100"
+            }`}
           >
-            <TbBrandGoogleHome />
-          </a>
-        </div>
-        <button
-          className="text-3xl text-[#815634] hover:text-[#212121] focus:outline-none"
-          onClick={() => setMenuOpen((open) => !open)}
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-        >
-          {menuOpen ? <IoMdClose /> : <HiMenu />}
-        </button>
-        {/* Mobile Dropdown */}
-        {menuOpen && (
-          <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[90vw] max-w-xs bg-white dark:bg-[#18181b] border border-[#bda87c] rounded-xl shadow-lg p-4 flex flex-col gap-3 z-50 animate-fade-in">
-            {navLinks.map(({ href, icon: Icon, title, external }) => (
+            {navigationLinks.slice(1).map(({ href, title }) => (
               <a
                 key={title}
                 href={href}
-                target={external ? "_blank" : undefined}
-                rel={external ? "noopener noreferrer" : undefined}
-                className="flex items-center gap-3 text-[#815634] dark:text-[#f5f5f5] hover:text-[#212121] dark:hover:text-[#ffd700] text-lg font-medium px-2 py-2 rounded transition-colors"
-                title={title}
-                onClick={() => setMenuOpen(false)}
+                className="transition-colors hover:text-white/70"
               >
-                <Icon className="text-2xl" />
-                <span>{title}</span>
+                {title}
               </a>
             ))}
-            <a
-              href="mailto:mbas750@gmail.com"
-              className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-4 py-2 rounded-xl shadow transition-colors duration-200 text-center mt-2"
-              style={{ whiteSpace: "nowrap" }}
-            >
-              Contact Me
-            </a>
           </div>
+
+          <button
+            type="button"
+            className={`ml-auto flex h-12 w-12 items-center justify-center rounded-full bg-black/80 text-white shadow-lg transition-all hover:cursor-pointer duration-300 md:h-14 md:w-14 ${
+              hasScrolled
+                ? "scale-100 opacity-100"
+                : "scale-90 opacity-100 md:opacity-0 md:pointer-events-none"
+            }`}
+            aria-label="Open navigation menu"
+            onClick={() => setMenuOpen(true)}
+          >
+            <Menu className="h-6 w-6" />
+          </button>
+        </div>
+      </nav>
+
+      <AnimatePresence>
+        {menuOpen && (
+          <>
+            <motion.button
+              type="button"
+              className="fixed inset-0 z-[60] cursor-default bg-black/40"
+              aria-label="Close navigation menu"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMenuOpen(false)}
+            />
+            <motion.aside
+              className="fixed bottom-0 right-0 top-0 z-[70] flex w-[40%] flex-col bg-[#1b1c20] px-8 py-9 text-white md:px-24 md:py-20"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <button
+                type="button"
+                className="absolute right-6 top-6 flex h-20 w-20 items-center justify-center rounded-full bg-white text-black/80 transition-transform hover:scale-95 md:right-10 md:top-10 md:h-14 md:w-14 hover:cursor-pointer"
+                aria-label="Close navigation menu"
+                onClick={() => setMenuOpen(false)}
+              >
+                <X className="h-6 w-6 stroke-[1.5]" />
+              </button>
+
+              <div className="">
+                <p className="text-sm font-bold uppercase text-white/40">
+                  Navigation
+                </p>
+                <div className="mt-10 h-px w-full bg-white/15" />
+                <div className="mt-8 flex flex-col items-start gap-5">
+                  {navigationLinks.map(({ href, title }, index) => (
+                    <a
+                      key={title}
+                      href={href}
+                      className="group flex items-center gap-7 text-5xl leading-none text-white transition-colors hover:text-white/70"
+                      onClick={() => handleNavClick(href)}
+                    >
+                      <span
+                        className={`h-3 w-3 rounded-full bg-white transition-opacity ${
+                          index === 0
+                            ? "opacity-100"
+                            : "opacity-0 group-hover:opacity-100"
+                        }`}
+                      />
+                      {title}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-auto pt-12">
+                <p className="text-sm font-bold uppercase text-white/40">
+                  Socials
+                </p>
+                <div className="mt-10 h-px w-full bg-white/15" />
+                <div className="mt-7 flex flex-wrap gap-5">
+                  {socialLinks.map(({ href, title }) => (
+                    <a
+                      key={title}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-semibold text-white transition-colors hover:text-white/60"
+                    >
+                      {title}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </motion.aside>
+          </>
         )}
-      </div>
-    </nav>
+      </AnimatePresence>
+    </>
   );
 };
 
