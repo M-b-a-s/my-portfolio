@@ -118,7 +118,7 @@ const Navbar = () => {
               onClick={() => setMenuOpen(false)}
             />
             <motion.aside
-              className="fixed bottom-0 right-0 top-0 z-[70] flex w-[40%] flex-col bg-[#1b1c20] px-8 py-9 text-white md:px-24 md:py-20"
+              className="fixed bottom-0 right-0 top-0 z-[70] flex w-full lg:w-[40%] flex-col bg-[#1b1c20] px-8 py-9 text-white md:px-24 md:py-20"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
