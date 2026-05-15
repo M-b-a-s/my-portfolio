@@ -30,7 +30,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/30"></div>
 
       {/* Top content - Location badge */}
-      <div className="absolute z-10 top-[40%] left-0 p-4 rounded-r-full bg-black/80">
+      <div className="absolute z-10 top-[40%] left-0 p-4 rounded-r-full bg-black/80 border-white border-2">
         <div className="flex items-center gap-3 w-fit">
           <div className="bg-white rounded-full p-3">
             <svg

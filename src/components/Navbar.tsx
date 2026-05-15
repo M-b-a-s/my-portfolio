@@ -51,41 +51,57 @@ const Navbar = () => {
     }
   };
 
+  const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    scrollToTop();
+  };
+
   return (
     <>
-      <nav className="fixed right-0 top-0 z-50 px-4 py-5">
+      <nav className="fixed left-0 right-0 top-0 z-50 py-5 border-black px-8">
         <div className="flex items-center justify-between">
-
-          <div
-            className={`hidden items-center gap-8 rounded-full bg-black/75 px-6 py-3 text-sm font-semibold text-white shadow-lg backdrop-blur-md transition-all duration-300 md:flex ${
-              hasScrolled
-                ? "translate-y-[-120%] opacity-0 pointer-events-none"
-                : "translate-y-0 opacity-100"
-            }`}
-          >
-            {navigationLinks.slice(1).map(({ href, title }) => (
-              <a
-                key={title}
-                href={href}
-                className="transition-colors hover:text-white/70"
-              >
-                {title}
-              </a>
-            ))}
+          <div className="flex items-center gap-6">
+            <a
+              href="#home"
+              className="text-sm font-semibold text-white transition-colors hover:text-white/70"
+              onClick={handleHomeClick}
+            >
+              ©M-b-a-s
+            </a>
           </div>
 
-          <button
-            type="button"
-            className={`ml-auto flex h-12 w-12 items-center justify-center rounded-full bg-black/80 text-white shadow-lg transition-all hover:cursor-pointer duration-300 md:h-14 md:w-14 ${
-              hasScrolled
-                ? "scale-100 opacity-100"
-                : "scale-90 opacity-100 md:opacity-0 md:pointer-events-none"
-            }`}
-            aria-label="Open navigation menu"
-            onClick={() => setMenuOpen(true)}
-          >
-            <Menu className="h-6 w-6" />
-          </button>
+          <div className="flex items-center ">
+            <div
+              className={`hidden items-center gap-8 rounded-full bg-black/75 px-6 py-3 text-sm font-semibold text-white shadow-lg backdrop-blur-md border-3 transition-all duration-300 md:flex ${
+                hasScrolled
+                  ? "translate-y-[-120%] opacity-0 pointer-events-none"
+                  : "translate-y-0 opacity-100"
+              }`}
+            >
+              {navigationLinks.slice(1).map(({ href, title }) => (
+                <a
+                  key={title}
+                  href={href}
+                  className="transition-colors hover:text-white/70"
+                >
+                  {title}
+                </a>
+              ))}
+            </div>
+
+            <button
+              type="button"
+              className={`flex h-12 w-12 items-center justify-center rounded-full bg-black/80 text-white shadow-lg transition-all duration-300 hover:cursor-pointer md:h-14 md:w-14 ${
+                hasScrolled
+                  ? "scale-100 opacity-100"
+                  : "scale-90 opacity-100 md:opacity-0 md:pointer-events-none"
+              }`}
+              aria-label="Open navigation menu"
+              onClick={() => setMenuOpen(true)}
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -110,14 +126,14 @@ const Navbar = () => {
             >
               <button
                 type="button"
-                className="absolute right-6 top-6 flex h-20 w-20 items-center justify-center rounded-full bg-white text-black/80 transition-transform hover:scale-95 md:right-10 md:top-10 md:h-14 md:w-14 hover:cursor-pointer"
+                className="absolute right-6 top-6 flex h-20 w-20 items-center justify-center rounded-full bg-white text-black/80 transition-transform hover:scale-95 hover:cursor-pointer md:right-10 md:top-10 md:h-14 md:w-14"
                 aria-label="Close navigation menu"
                 onClick={() => setMenuOpen(false)}
               >
                 <X className="h-6 w-6 stroke-[1.5]" />
               </button>
 
-              <div className="">
+              <div>
                 <p className="text-sm font-bold uppercase text-white/40">
                   Navigation
                 </p>
