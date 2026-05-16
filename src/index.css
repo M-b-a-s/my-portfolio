@@ -122,3 +122,20 @@
   }
 }
 
+@keyframes footer-liquid-wave {
+  from {
+    transform: translateX(-12%) rotate(0deg);
+  }
+  to {
+    transform: translateX(12%) rotate(360deg);
+  }
+}
+
+.footer-liquid-wave {
+  animation: footer-liquid-wave 4s linear infinite;
+}
+
+.footer-liquid-wave-slow {
+  animation-duration: 6s;
+  animation-direction: reverse;
+}

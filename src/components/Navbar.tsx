@@ -56,27 +56,27 @@ const Navbar = () => {
     scrollToTop();
   };
 
+  const hiddenOnScrollClass = hasScrolled
+    ? "translate-y-[-120%] opacity-0 pointer-events-none"
+    : "translate-y-0 opacity-100";
+
   return (
     <>
-      <nav className="fixed left-0 right-0 top-0 z-50 py-5 border-black px-8">
+      <nav className="fixed left-0 right-0 top-0 z-50 border-black px-8 py-5">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-6">
             <a
               href="#home"
-              className="text-sm font-semibold text-white transition-colors hover:text-white/70"
+              className={`text-sm font-semibold text-white transition-all duration-300 hover:text-white/70 ${hiddenOnScrollClass}`}
               onClick={handleHomeClick}
             >
               ©M-b-a-s
             </a>
           </div>
 
-          <div className="flex items-center ">
+          <div className="flex items-center">
             <div
-              className={`hidden items-center gap-8 rounded-full bg-black/75 px-6 py-3 text-sm font-semibold text-white shadow-lg backdrop-blur-md border-3 transition-all duration-300 md:flex ${
-                hasScrolled
-                  ? "translate-y-[-120%] opacity-0 pointer-events-none"
-                  : "translate-y-0 opacity-100"
-              }`}
+              className={`hidden items-center gap-8 rounded-full border-3 bg-black/75 px-6 py-3 text-sm font-semibold text-white shadow-lg backdrop-blur-md transition-all duration-300 md:flex ${hiddenOnScrollClass}`}
             >
               {navigationLinks.slice(1).map(({ href, title }) => (
                 <a
@@ -118,7 +118,7 @@ const Navbar = () => {
               onClick={() => setMenuOpen(false)}
             />
             <motion.aside
-              className="fixed bottom-0 right-0 top-0 z-[70] flex w-full lg:w-[40%] flex-col bg-[#1b1c20] px-8 py-9 text-white md:px-24 md:py-20"
+              className="fixed bottom-0 right-0 top-0 z-[70] flex w-full flex-col bg-[#1b1c20] px-8 py-9 text-white md:px-24 md:py-20 lg:w-[40%]"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}

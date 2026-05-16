@@ -1,37 +1,127 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ArrowDownLeft } from "lucide-react";
+import meImg from "../assets/me.png";
+
+const socialLinks = [
+  { href: "https://github.com/M-b-a-s", title: "GitHub" },
+  { href: "https://instagram.com/mbas_ernest", title: "Instagram" },
+  { href: "https://x.com/ernest_mbas", title: "Twitter" },
+  { href: "https://www.linkedin.com/in/ifechimenim", title: "LinkedIn" },
+];
+
+const getLocalTime = () =>
+  new Intl.DateTimeFormat("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+    timeZone: "Africa/Lagos",
+    timeZoneName: "short",
+  }).format(new Date());
 
 const Footer = () => {
-  const [showCallModal, setShowCallModal] = useState(false);
+  const [localTime, setLocalTime] = useState(getLocalTime);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setLocalTime(getLocalTime());
+    }, 30_000);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
-    <footer id="contact" className="mt-24 ">
-      <div className="flex flex-col w-full">
-        <div className="flex w-full max-w-2xl mx-auto">
-          <hr className="flex-grow border-t border-[#e5e5e5]" />
+    <footer
+      id="contact"
+      className="relative min-h-screen overflow-hidden bg-[#1b1c20] px-6 py-10 text-white md:px-14 lg:px-20"
+    >
+      <div className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-7xl flex-col">
+        <div className="pt-20 max-w-5xl">
+          <div className="flex flex-col gap-7">
+            <div className="flex items-center gap-7">
+              <img
+                src={meImg}
+                alt="M-b-a-s"
+                className="h-15 w-15 rounded-full object-cover object-top md:h-24 md:w-24"
+              />
+              <h2 className="text-6xl font-semibold leading-[0.95] tracking-[-0.04em]">
+                Let's build
+              </h2>
+            </div>
+            <h2 className="text-6xl font-semibold leading-[0.95] tracking-[-0.04em]">
+              together
+            </h2>
+          </div>
+
+          <div className="relative mt-24">
+            <div className="h-px w-full bg-white/15" />
+            <ArrowDownLeft className="absolute -top-28 right-[12%] h-8 w-8 text-white/80" />
+            <a
+              href="mailto:mbas750@gmail.com"
+              className="group absolute left-2/3 top-0 flex aspect-square w-44 -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full bg-[#eaecfc] text-lg font-semibold text-black transition-transform duration-300 hover:scale-95"
+            >
+              <span className="absolute inset-x-[-20%] bottom-[-15%] h-[125%] translate-y-full rounded-[45%_45%_0_0] bg-[#815634] transition-transform duration-[1400ms] ease-out group-hover:translate-y-0" />
+              <span className="absolute inset-x-[-30%] bottom-[38%] h-16 translate-y-28 opacity-0 transition-all duration-[1400ms] ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                <span className="footer-liquid-wave block h-full rounded-[45%] bg-white/25" />
+              </span>
+              <span className="absolute inset-x-[-35%] bottom-[42%] h-20 translate-y-28 opacity-0 transition-all duration-[1600ms] ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                <span className="footer-liquid-wave footer-liquid-wave-slow block h-full rounded-[48%] bg-white/15" />
+              </span>
+              <span className="relative z-10 transition-colors duration-700 group-hover:text-white">
+                Get in touch
+              </span>
+            </a>
+          </div>
+
+          <div className="mt-10 flex flex-col gap-4 md:flex-row">
+            <a
+              href="mailto:mbas750@gmail.com"
+              className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-md font-semibold text-white transition-colors hover:border-white/60 "
+            >
+              mbas750@gmail.com
+            </a>
+            <a
+              href="https://cal.com/m-b-a-s"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-md font-semibold text-white transition-colors hover:border-white/60"
+            >
+              Book a call
+            </a>
+          </div>
         </div>
-        <h2 className="text-3xl font-bold text-[#212121] dark:text-white mt-6">Let's Connect</h2>
-        <p className="mt-4 max-w-xl dark:text-[#b9b7b7]">
-          Tired of prototypes that never launch or designs that don't convert? I turn ideas into products that actually do the job - and make money. If you're building for impact, not just aesthetics, let's make it real. Serious builders only.
-        </p>
-        <div className="flex items-center gap-2 mt-6 flex-wrap">
-          <a href="mailto:mbas750@gmail.com" className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold rounded-xl shadow transition-colors duration-200 md:px-6 md:py-2 md:text-base px-3 py-1.5 text-sm">Send Message</a>
-          <button onClick={() => setShowCallModal(true)} className="bg-white border border-[#815634] text-[#815634] font-semibold rounded-xl shadow transition-colors duration-200 hover:cursor-pointer md:px-6 md:py-2 md:text-base px-3 py-1.5 text-sm">Book a Call</button>
-        </div>
-        {/* Modal for Book a Call */}
-        {showCallModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm" onClick={() => setShowCallModal(false)}>
-            <div className="bg-white rounded-xl shadow-2xl p-8 max-w-lg w-full relative flex flex-col items-center" onClick={e => e.stopPropagation()}>
-              <button className="absolute top-4 right-4 text-2xl text-slate-400 hover:text-[#815634] focus:outline-none" onClick={() => setShowCallModal(false)} aria-label="Close modal">&times;</button>
-              <h3 className="text-2xl font-bold mb-4 text-[#212121]">Schedule a Call</h3>
-              <p className="mb-6 text-slate-950 text-center">You’ll be redirected to my Cal.com page to book a time that works for you.</p>
-              <a href="https://cal.com/m-b-a-s" target="_blank" rel="noopener noreferrer" className="bg-[#815634] hover:bg-[#312f2f] text-white font-semibold px-6 py-2 rounded-xl shadow transition-colors duration-200">Go to Cal.com</a>
+
+        <div className="mt-auto grid gap-10 pt-20 md:grid-cols-[1fr_1fr_2fr] md:items-end">
+          <div>
+            <p className="text-sm font-bold uppercase text-white/35">Version</p>
+            <p className="mt-6 text-sm font-semibold">
+              {new Date().getFullYear()} &copy; Edition
+            </p>
+          </div>
+          <div>
+            <p className="text-sm font-bold uppercase text-white/35">
+              Local time
+            </p>
+            <p className="mt-6 text-sm font-semibold">{localTime}</p>
+          </div>
+          <div className="md:justify-self-end">
+            <p className="text-sm font-bold uppercase text-white/35">
+              Socials
+            </p>
+            <div className="mt-6 flex flex-wrap gap-x-9 gap-y-4">
+              {socialLinks.map(({ href, title }) => (
+                <a
+                  key={title}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-white transition-colors hover:text-white/60"
+                >
+                  {title}
+                </a>
+              ))}
             </div>
           </div>
-        )}
-        <div className="flex items-center w-full max-w-2xl mx-auto mt-10">
-          <hr className="flex-grow border-t border-[#e5e5e5]" />
         </div>
-        <p className="mt-4 mb-2 text-slate-400 text-xs text-center w-full">&copy; {new Date().getFullYear()} M-b-a-s.</p>
-        <p className=" text-slate-400 text-xs text-center w-full pb-6">All rights reserved.</p>
       </div>
     </footer>
   );
