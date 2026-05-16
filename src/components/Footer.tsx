@@ -43,11 +43,11 @@ const Footer = () => {
                 alt="M-b-a-s"
                 className="h-15 w-15 rounded-full object-cover object-top md:h-24 md:w-24"
               />
-              <h2 className="text-6xl font-semibold leading-[0.95] tracking-[-0.04em]">
+              <h2 className="text-3xl md:text-6xl font-semibold leading-[0.95] tracking-[-0.04em]">
                 Let's build
               </h2>
             </div>
-            <h2 className="text-6xl font-semibold leading-[0.95] tracking-[-0.04em]">
+            <h2 className="text-3xl md:text-6xl font-semibold leading-[0.95] tracking-[-0.04em]">
               together
             </h2>
           </div>
