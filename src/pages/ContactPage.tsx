@@ -100,7 +100,6 @@ const ContactPage = () => {
         >
           <div className="relative max-w-md">
             {/* Decorative circle border */}
-            <div className="absolute -inset-8 rounded-full border-2 border-white/20 -z-10" />
 
             <div className="text-center">
               <h1 className="text-6xl md:text-7xl font-bold mb-4">
