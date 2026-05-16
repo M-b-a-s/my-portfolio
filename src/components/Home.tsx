@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
 import { useEffect, useState, type ReactNode, type RefObject } from "react";
-import Navbar from "./Navbar";
 import Hero from "./Hero";
 import About from "./About";
 import Experience from "./Experience";
 import ProjectsSection from "./ProjectsSection";
 import Skills from "./Skills";
-import Footer from "./Footer";
 import { useInView } from "../lib/useInView";
 import { ModeToggle } from "./mode-toggle";
 
@@ -46,20 +44,18 @@ const Home = () => {
   const [expRef, expInView] = useInView();
   const [projRef, projInView] = useInView();
   const [skillsRef, skillsInView] = useInView();
-  const [footerRef, footerInView] = useInView();
 
   useEffect(() => {
-    if (!hasAnimated && footerInView) {
+    if (!hasAnimated && (aboutInView || skillsInView || expInView || projInView)) {
       setHasAnimated(true);
     }
-  }, [footerInView, hasAnimated]);
+  }, [projInView, aboutInView, skillsInView, expInView, hasAnimated]);
 
   return (
     <div>
       <div className="fixed bottom-10 right-8 z-50">
         <ModeToggle />
       </div>
-      <Navbar />
       <div className="mx-auto max-w-full">
         <Hero />
         <AnimatedSection refObj={aboutRef} inView={aboutInView} hasAnimated={hasAnimated}>
@@ -73,9 +69,6 @@ const Home = () => {
         </AnimatedSection>
         <AnimatedSection refObj={projRef} inView={projInView} hasAnimated={hasAnimated}>
           <ProjectsSection />
-        </AnimatedSection>
-        <AnimatedSection refObj={footerRef} inView={footerInView} hasAnimated={hasAnimated}>
-          <Footer />
         </AnimatedSection>
       </div>
     </div>

@@ -3,10 +3,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navigationLinks = [
-  { href: "#home", title: "Home" },
-  { href: "#projects", title: "Work" },
-  { href: "#about", title: "About" },
-  { href: "#contact", title: "Contact" },
+  { href: "/", title: "Home" },
+  { href: "/work", title: "Work" },
+  { href: "/about", title: "About" },
+  { href: "/contact", title: "Contact" },
 ];
 
 const socialLinks = [
@@ -15,10 +15,6 @@ const socialLinks = [
   { href: "https://instagram.com/mbas_ernest", title: "Instagram" },
   { href: "https://x.com/ernest_mbas", title: "Twitter" },
 ];
-
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -45,15 +41,12 @@ const Navbar = () => {
 
   const handleNavClick = (href: string) => {
     setMenuOpen(false);
-
-    if (href === "#home") {
-      scrollToTop();
-    }
+    window.location.href = href;
   };
 
   const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    scrollToTop();
+    window.location.href = "/";
   };
 
   const hiddenOnScrollClass = hasScrolled
@@ -67,7 +60,7 @@ const Navbar = () => {
           <div className="flex items-center gap-6">
             <a
               href="#home"
-              className={`text-sm font-semibold text-white transition-all duration-300 hover:text-white/70 ${hiddenOnScrollClass}`}
+              className={`text-md font-semibold text-white transition-all duration-300 hover:text-white/70 ${hiddenOnScrollClass}`}
               onClick={handleHomeClick}
             >
               ©M-b-a-s
@@ -83,6 +76,10 @@ const Navbar = () => {
                   key={title}
                   href={href}
                   className="transition-colors hover:text-white/70"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = href;
+                  }}
                 >
                   {title}
                 </a>
@@ -144,7 +141,10 @@ const Navbar = () => {
                       key={title}
                       href={href}
                       className="group flex items-center gap-7 text-5xl leading-none text-white transition-colors hover:text-white/70"
-                      onClick={() => handleNavClick(href)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavClick(href);
+                      }}
                     >
                       <span
                         className={`h-3 w-3 rounded-full bg-white transition-opacity ${
