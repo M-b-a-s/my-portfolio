@@ -126,7 +126,7 @@ const Navbar = () => {
             >
               <button
                 type="button"
-                className="absolute right-6 top-6 flex h-20 w-20 items-center justify-center rounded-full bg-white text-black/80 transition-transform hover:scale-95 hover:cursor-pointer md:right-10 md:top-10 md:h-14 md:w-14"
+                className="absolute right-6 top-6 flex h-12 w-12 items-center justify-center rounded-full bg-white text-black/80 transition-transform hover:scale-95 hover:cursor-pointer md:right-10 md:top-10 md:h-14 md:w-14"
                 aria-label="Close navigation menu"
                 onClick={() => setMenuOpen(false)}
               >

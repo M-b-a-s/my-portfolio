@@ -38,7 +38,7 @@ const About = () => {
 
         <motion.a
           href="/about"
-          className="group relative inline-flex aspect-square w-40 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#212121] text-center text-xl font-bold leading-none text-white shadow-xl"
+          className="group relative inline-flex aspect-square w-30 md:w-40 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#212121] text-center text-xl font-bold leading-none text-white shadow-xl"
           style={{ x: springX, y: springY }}
           whileHover={{ scale: 0.95 }}
           whileTap={{ scale: 0.9 }}

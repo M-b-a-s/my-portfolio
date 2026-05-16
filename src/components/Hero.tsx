@@ -78,7 +78,7 @@ const Hero = () => {
             {[displayName, displayName].map((name, index) => (
               <h1
                 key={index}
-                className="pr-10 text-xl md:pr-16 md:text-9xl lg:text-8xl font-bold text-white leading-none"
+                className="pr-10 text-9xl md:pr-16 lg:text-8xl font-bold text-white leading-none"
               >
                 {name}
               </h1>

@@ -99,7 +99,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="relative mt-15 h-full overflow-hidden px-4 py-20 text-[#4b4b4b] md:px-12"
+      className="relative h-full overflow-hidden px-4 py-20 text-[#4b4b4b] md:px-12"
       style={{
         backgroundColor: "#f6f5f1",
         backgroundImage:

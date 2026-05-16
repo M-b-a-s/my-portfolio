@@ -57,7 +57,7 @@ const Footer = () => {
             <ArrowDownLeft className="absolute -top-28 right-[12%] h-8 w-8 text-white/80" />
             <a
               href="mailto:mbas750@gmail.com"
-              className="group absolute left-2/3 top-0 flex aspect-square w-44 -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full bg-[#eaecfc] text-lg font-semibold text-black transition-transform duration-300 hover:scale-95"
+              className="group absolute left-2/3 top-0 flex aspect-square w-35 md:w-44 -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full bg-[#eaecfc] text-lg font-semibold text-black transition-transform duration-300 hover:scale-95"
             >
               <span className="absolute inset-x-[-20%] bottom-[-15%] h-[125%] translate-y-full rounded-[45%_45%_0_0] bg-[#815634] transition-transform duration-[1400ms] ease-out group-hover:translate-y-0" />
               <span className="absolute inset-x-[-30%] bottom-[38%] h-16 translate-y-28 opacity-0 transition-all duration-[1400ms] ease-out group-hover:translate-y-0 group-hover:opacity-100">
@@ -72,7 +72,7 @@ const Footer = () => {
             </a>
           </div>
 
-          <div className="mt-10 flex flex-col gap-4 md:flex-row">
+          <div className="mt-25 md:mt-10 flex flex-col gap-4 md:flex-row">
             <a
               href="mailto:mbas750@gmail.com"
               className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-md font-semibold text-white transition-colors hover:border-white/60 "
