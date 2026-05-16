@@ -56,7 +56,7 @@ const Hero = () => {
       <div className="absolute z-10 top-[35%] right-0 pr-8 hidden md:block">
         <ArrowDownRight className="text-white"/>
         <p className="text-2xl text-white mb-4">
-          DevOps & <br />Cloud Engineer
+          Software & <br />QA Engineer
         </p>
       </div>
 

@@ -6,7 +6,6 @@ import Experience from "./Experience";
 import ProjectsSection from "./ProjectsSection";
 import Skills from "./Skills";
 import { useInView } from "../lib/useInView";
-import { ModeToggle } from "./mode-toggle";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 60 },
@@ -53,9 +52,6 @@ const Home = () => {
 
   return (
     <div>
-      <div className="fixed bottom-10 right-8 z-50">
-        <ModeToggle />
-      </div>
       <div className="mx-auto max-w-full">
         <Hero />
         <AnimatedSection refObj={aboutRef} inView={aboutInView} hasAnimated={hasAnimated}>
