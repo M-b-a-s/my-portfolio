@@ -107,6 +107,9 @@ const Skills = () => {
         backgroundSize: "28px 28px, 36px 36px",
       }}
     >
+      <div className="mb-16 flex items-center justify-between text-[0.65rem] font-black uppercase tracking-[0.35em] text-[#6c6c6c]">
+        <span>Skills</span>
+      </div>
 
       <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[130px_1fr] lg:grid-cols-[180px_1fr]">
         <div className="hidden md:flex md:items-start md:justify-center">

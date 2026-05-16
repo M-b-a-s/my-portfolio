@@ -107,7 +107,7 @@ const Footer = () => {
             <p className="text-sm font-bold uppercase text-white/35">
               Socials
             </p>
-            <div className="mt-6 flex flex-wrap gap-x-9 gap-y-4">
+            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-4">
               {socialLinks.map(({ href, title }) => (
                 <a
                   key={title}

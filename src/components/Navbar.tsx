@@ -164,7 +164,7 @@ const Navbar = () => {
                   Socials
                 </p>
                 <div className="mt-10 h-px w-full bg-white/15" />
-                <div className="mt-7 flex flex-wrap gap-5">
+                <div className="mt-7 flex flex-wrap gap-2 md:gap-5">
                   {socialLinks.map(({ href, title }) => (
                     <a
                       key={title}
