@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Preloader from "./Preloader";
+import Preloader from "../components/Preloader";
 
 const aboutText = [
   "I'm Mbas, a software engineer who enjoys turning rough ideas into clean, useful products.",

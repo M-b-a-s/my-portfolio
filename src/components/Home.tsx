@@ -5,7 +5,7 @@ import Hero from "./Hero";
 import About from "./About";
 import Experience from "./Experience";
 import ProjectsSection from "./ProjectsSection";
-import ToolsSection from "./ToolsSection";
+import Skills from "./Skills";
 import Footer from "./Footer";
 import { useInView } from "../lib/useInView";
 import { ModeToggle } from "./mode-toggle";
@@ -45,7 +45,7 @@ const Home = () => {
   const [aboutRef, aboutInView] = useInView();
   const [expRef, expInView] = useInView();
   const [projRef, projInView] = useInView();
-  const [toolsRef, toolsInView] = useInView();
+  const [skillsRef, skillsInView] = useInView();
   const [footerRef, footerInView] = useInView();
 
   useEffect(() => {
@@ -65,14 +65,14 @@ const Home = () => {
         <AnimatedSection refObj={aboutRef} inView={aboutInView} hasAnimated={hasAnimated}>
           <About />
         </AnimatedSection>
+        <AnimatedSection refObj={skillsRef} inView={skillsInView} hasAnimated={hasAnimated}>
+          <Skills />
+        </AnimatedSection>
         <AnimatedSection refObj={expRef} inView={expInView} hasAnimated={hasAnimated}>
           <Experience />
         </AnimatedSection>
         <AnimatedSection refObj={projRef} inView={projInView} hasAnimated={hasAnimated}>
           <ProjectsSection />
-        </AnimatedSection>
-        <AnimatedSection refObj={toolsRef} inView={toolsInView} hasAnimated={hasAnimated}>
-          <ToolsSection />
         </AnimatedSection>
         <AnimatedSection refObj={footerRef} inView={footerInView} hasAnimated={hasAnimated}>
           <Footer />

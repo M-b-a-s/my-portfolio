@@ -16,11 +16,14 @@ const About = () => (
 
       <a
         href="/about"
-        className="inline-flex aspect-square w-40 shrink-0 items-center justify-center rounded-full bg-[#212121] text-center text-3xl font-bold leading-none text-white shadow-xl transition-transform duration-300 hover:scale-95 hover:bg-black md:w-52"
+        className="group relative inline-flex aspect-square w-40 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#212121] text-center text-3xl font-bold leading-none text-white shadow-xl transition-transform duration-300 hover:scale-95 md:w-52"
       >
-        About
-        <br />
-        me
+        <span className="absolute inset-0 origin-bottom scale-y-0 bg-[#815634] transition-transform duration-[2000ms] ease-out group-hover:scale-y-100" />
+        <span className="relative z-10">
+          About
+          <br />
+          me
+        </span>
       </a>
     </div>
   </section>

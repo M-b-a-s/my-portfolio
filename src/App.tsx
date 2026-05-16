@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "@/components/theme-provider"
 import Preloader from "./components/Preloader";
 import Home from "./components/Home";
-import AboutPage from "./components/AboutPage";
+import AboutPage from "./pages/AboutPage";
 
 const App = () => {
   const isAboutPage = window.location.pathname === "/about";
