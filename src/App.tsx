@@ -18,8 +18,8 @@ const App = () => {
 
     const timer = setTimeout(() => {
       setFadeOut(true);
-      setTimeout(() => setShowPreloader(false), 800); // match fade duration
-    }, 8000); // Show preloader for 8 seconds
+      setTimeout(() => setShowPreloader(false), 400); // match fade duration
+    }, 3000); // 
     return () => clearTimeout(timer);
   }, [isAboutPage]);
 
@@ -27,28 +27,28 @@ const App = () => {
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
 
     <div className="min-h-screen w-full relative">
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {showPreloader && (
           <motion.div
             key="preloader"
-            className="flex items-center justify-center min-h-screen w-full fixed inset-0 z-50 bg-white"
+            className="flex items-center justify-center min-h-screen w-full fixed inset-0 z-50 bg-[#2a2a2a]"
             initial={{ opacity: 1 }}
-            animate={{ opacity: fadeOut ? 0 : 1, scale: fadeOut ? 0.95 : 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            animate={{ opacity: fadeOut ? 0 : 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
           >
             <Preloader
-              sentence="One sec, please..."
-              manualMode={false}
-              blurAmount={5}
-              borderColor="#815634"
-              animationDuration={2}
-              pauseBetweenAnimations={1}
             />
           </motion.div>
         )}
       </AnimatePresence>
-      {!showPreloader && (isAboutPage ? <AboutPage /> : <Home />)}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: showPreloader ? 0 : 1 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+      >
+        {!showPreloader && (isAboutPage ? <AboutPage /> : <Home />)}
+      </motion.div>
     </div>
     </ThemeProvider>
   );
