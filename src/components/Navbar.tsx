@@ -19,6 +19,8 @@ const socialLinks = [
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const pathname = window.location.pathname;
+  const isAboutPage = pathname === "/about";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +62,11 @@ const Navbar = () => {
           <div className="flex items-center gap-6">
             <a
               href="#home"
-              className={`text-md font-semibold text-white transition-all duration-300 hover:text-white/70 ${hiddenOnScrollClass}`}
+              className={`text-md font-semibold transition-all duration-300 ${
+                isAboutPage
+                  ? "text-black hover:text-black/70"
+                  : "text-white hover:text-white/70"
+              } ${hiddenOnScrollClass}`}
               onClick={handleHomeClick}
             >
               ©M-b-a-s
@@ -115,7 +121,7 @@ const Navbar = () => {
               onClick={() => setMenuOpen(false)}
             />
             <motion.aside
-              className="fixed bottom-0 right-0 top-0 z-[70] flex w-full flex-col bg-[#1b1c20] px-8 py-9 text-white md:px-24 md:py-20 lg:w-[40%]"
+              className="fixed bottom-0 right-0 top-0 z-[70] flex w-full flex-col bg-[#1b1c20] px-8 py-9 text-white md:px-20 md:py-20 lg:w-[40%]"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}

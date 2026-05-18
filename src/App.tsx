@@ -7,6 +7,7 @@ import Preloader from "./components/Preloader";
 import Home from "./components/Home";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import Work from "./pages/Work";
 
 const App = () => {
   const pathname = window.location.pathname;
@@ -33,7 +34,7 @@ const App = () => {
 
   const renderPage = () => {
     if (isAboutPage) return <AboutPage />;
-    if (isWorkPage) return <div className="min-h-screen flex items-center justify-center text-2xl">Work Page - Coming Soon</div>;
+    if (isWorkPage) return <Work />;
     if (isContactPage) return <ContactPage />;
     return <Home />;
   };

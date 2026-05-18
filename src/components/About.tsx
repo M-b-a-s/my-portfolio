@@ -24,7 +24,7 @@ const About = () => {
     <section id="about" className="mt-10 px-4 py-24">
       <div className="mx-auto flex max-w-4xl flex-col gap-12 md:flex-row md:items-end md:justify-between">
         <div className="max-w-4xl">
-          <p className="text-2xl font-semibold leading-tight text-[#212121] dark:text-white ">
+          <p className="text-2xl font-semibold leading-relaxed text-[#212121] dark:text-white ">
             Helping products stand strong in the digital era. Together we build
             systems that raise the standard. No noise, just thoughtful engineering
             across frontend, backend, QA, system design, and DevOps.
