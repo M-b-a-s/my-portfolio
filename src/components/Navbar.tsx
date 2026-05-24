@@ -20,7 +20,8 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const pathname = window.location.pathname;
-  const isAboutPage = pathname === "/about";
+  const isWorkPage = pathname === "/work";
+  const usesLightHeader = pathname === "/about" || pathname === "/work";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,12 +59,18 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed left-0 right-0 top-0 z-50 border-black px-8 py-5">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-6">
+        <div
+          className={`flex items-center ${
+            isWorkPage ? "justify-end" : "justify-between"
+          }`}
+        >
+          <div
+            className={`flex items-center gap-6 ${isWorkPage ? "hidden" : ""}`}
+          >
             <a
               href="#home"
               className={`text-md font-semibold transition-all duration-300 ${
-                isAboutPage
+                usesLightHeader
                   ? "text-black hover:text-black/70"
                   : "text-white hover:text-white/70"
               } ${hiddenOnScrollClass}`}
@@ -75,7 +82,9 @@ const Navbar = () => {
 
           <div className="flex items-center">
             <div
-              className={`hidden items-center gap-8 rounded-full border-3 bg-black/75 px-6 py-3 text-sm font-semibold text-white shadow-lg backdrop-blur-md transition-all duration-300 md:flex ${hiddenOnScrollClass}`}
+              className={`hidden items-center gap-8 rounded-full border-3 bg-black/75 px-6 py-3 text-sm font-semibold text-white shadow-lg backdrop-blur-md transition-all duration-300 ${
+                isWorkPage ? "" : "md:flex"
+              } ${hiddenOnScrollClass}`}
             >
               {navigationLinks.slice(1).map(({ href, title }) => (
                 <a
@@ -95,7 +104,7 @@ const Navbar = () => {
             <button
               type="button"
               className={`flex h-12 w-12 items-center justify-center rounded-full bg-black/80 text-white shadow-lg transition-all duration-300 hover:cursor-pointer md:h-14 md:w-14 ${
-                hasScrolled
+                isWorkPage || hasScrolled
                   ? "scale-100 opacity-100"
                   : "scale-90 opacity-100 md:opacity-0 md:pointer-events-none"
               }`}
